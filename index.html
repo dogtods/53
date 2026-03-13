@@ -23,10 +23,27 @@
         <div id="progress-text">1 / 54</div>
       </header>
 
+      <!-- 新設：CSSで描くルート線と現在地ピンの表示エリア -->
+      <div id="route-map-container">
+        <div class="route-line"></div>
+        <!-- 主要なランドマーク（目安） -->
+        <span class="landmark landmark-edo">江戸</span>
+        <span class="landmark landmark-fuji">富士山</span>
+        <span class="landmark landmark-nagoya">名古屋</span>
+        <span class="landmark landmark-kyoto">京都</span>
+        <!-- 動く現在地ピン -->
+        <div id="map-pin">
+          <span class="pin-icon">📍</span>
+          <span id="pin-label">日本橋</span>
+        </div>
+      </div>
+
       <main>
         <div class="current-station">
           <span class="label">現在の宿場</span>
           <h1 id="current-name">日本橋</h1>
+          <!-- 名物テキストのみ表示 -->
+          <p id="current-meibutsu" class="station-meibutsu"></p>
         </div>
         
         <div class="question-area">
@@ -34,6 +51,12 @@
           <div id="choices-container">
             <!-- 選択肢がJavaScriptで挿入されます -->
           </div>
+        </div>
+        
+        <!-- ご当地の面白ヒント表示エリア -->
+        <div id="hint-area" class="hint-card">
+          <h3>💡 ご当地ヒント</h3>
+          <p id="current-hint-text">ヒントのテキストがここに入ります</p>
         </div>
       </main>
 

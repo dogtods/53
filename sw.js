@@ -1,5 +1,5 @@
 // Service Worker - オフライン対応用のキャッシュ設定
-const CACHE_NAME = 'tokaido-quiz-v1';
+const CACHE_NAME = 'tokaido-quiz-v5';
 const urlsToCache = [
   '/',
   '/index.html',
