@@ -63,7 +63,7 @@ const blocks = [
   { name: "3: 静岡中部", start: 16, end: 24 },
   { name: "4: 静岡西部", start: 25, end: 33 },
   { name: "5: 愛知", start: 34, end: 42 },
-  { name: "6: 三重・近江・京都", start: 43, end: 54 }
+  { name: "6: 三重・近江・京都", start: 43, end: 55 }
 ];
 
 let currentStations = []; // 今回学習/クイズの対象となる宿場サブセット
