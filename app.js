@@ -19,7 +19,7 @@ const stations = [
   { name: "興津宿", meibutsu: "清見寺・興津鯛", hintText: "📍徳川家康が愛した「清見寺」があり、晩年もよく訪れたと言われます。名物は薄塩の鯛の一夜干し「興津鯛（おきつだい）」で、家康も好んで食べたと伝わっています。" },
   { name: "江尻宿", meibutsu: "三保の松原・巴川", hintText: "📍『ちびまる子ちゃん』の舞台として有名な静岡市清水区（旧清水市）の中心部です。清水港には「清水まつり」や「次郎長」の歴史があり、マグロの水揚げは日本一を誇ります。" },
   { name: "府中宿", meibutsu: "駿府城・安倍川もち", hintText: "📍徳川家康が晩年を過ごした「駿府城」の城下町です。名物の「安倍川もち」は、家康が名前を付けたという逸話があり、現在も「石部屋（せきべや）」などの老舗でつきたてを味わえます。" },
-  { name: "鞠子宿", meibutsu: "丁子屋のとろろ汁", hintText: "📍広重の絵にも描かった名物「とろろ汁」の老舗「丁子屋」は、1596年の創業から現在まで同じ場所で営業を続けています。茅葺き屋根の建物で食べる麦飯ロマンは格別です。" },
+  { name: "鞠子宿", meibutsu: "丁子屋のとろろ汁", hintText: "📍広重の絵にも描っかった名物「とろろ汁」の老舗「丁子屋」は、1596年の創業から現在まで同じ場所で営業を続けています。茅葺き屋根の建物で食べる麦飯ロマンは格別です。" },
   { name: "岡部宿", meibutsu: "宇津ノ谷峠・十団子", hintText: "📍「大旅籠 柏屋（かしばや）」という江戸時代の豪華な宿の建物が当時のまま保存されており、内部を見学できます。昔ながらの「十団子（とおだんご）」という魔除けの小さなお菓子が名物でした。" },
   { name: "藤枝宿", meibutsu: "瀬戸の染飯・蓮華寺池", hintText: "📍名物「瀬戸の染飯（そめいい）」は、クチナシの実で黄色く染め、疲労回復を願って食べられたおこわです。現代の藤枝市は「サッカーの街」としても全国的に有名です。" },
   { name: "島田宿", meibutsu: "大井川川越し・島田髷", hintText: "📍「箱根八里は馬でも越すが、越すに越されぬ大井川」で知られる川越しの拠点です。現在でも川越し遺跡が残り、「世界一長い木造歩道橋（蓬莱橋）」は映画や時代劇のロケ地として頻繁に使われます。" },
@@ -51,104 +51,146 @@ const stations = [
   { name: "土山宿", meibutsu: "春の雨・お茶", hintText: "📍滋賀県（近江国）最初の宿場。「坂は照る照る 鈴鹿は曇る あいの土山 雨が降る」と馬子唄に歌われたように、雨が多い地域。その気候を生かした「土山茶」という濃厚で美味しいお茶が名産品です。" },
   { name: "水口宿", meibutsu: "水口干瓢（かんぴょう）", hintText: "📍水口城の城下町。名産品の「干瓢（かんぴょう）」は、夕顔の実を薄く紐状に剥いて天日干しにしたもので、広重の絵にも軒下に白い干瓢が干されている様子が描かれています。" },
   { name: "石部宿", meibutsu: "京立ち石部泊まり・田楽", hintText: "📍「京立ち 石部泊まり」と言葉があるように、京都を出発した旅人が1日目の夜に宿泊する定番の場所として栄えました。「田楽（お豆腐に味噌を塗って焼いた郷土料理）」を出す茶屋が名物でした。" },
-  { name: "草津宿", meibutsu: "草津本陣・中山道分岐", hintText: "📍東海道と、もう一つの主要街道である「中山道（なかせんど）」が合流する超重要拠点で、信じられないほどの交通量を誇りました。現存する「草津宿本陣」は国内最大級の規模で、新選組の土方歳三なども宿泊した記録が残っています。" },
+  { name: "草津宿", meibutsu: "草津本陣・中山道分岐", hintText: "📍東海道と、もう一つの主要街道である「中山道（なかせんどう）」が合流する超重要拠点で、信じられないほどの交通量を誇りました。現存する「草津宿本陣」は国内最大級の規模で、新選組の土方歳三なども宿泊した記録が残っています。" },
   { name: "大津宿", meibutsu: "三井寺・大津絵・琵琶湖", hintText: "📍京都の直前、東海道最大の宿場（現在の滋賀県大津市）です。「大津絵」という独特のコミカルな民画が旅の土産として大ブームになりました。日本最大の湖「琵琶湖」を眺めながら、いよいよゴールの京都へ入ります。" },
   { name: "三条大橋", meibutsu: "京都・鴨川・旅の終点", hintText: "📍【ゴール】京都の真ん中、鴨川に架かる三条大橋。江戸から約490キロ、約2週間の徒歩の旅の終着点です。幕末には新選組による「池田屋事件」の舞台となり、橋の擬宝珠（ぎぼし）には今も当時の刀傷が残っています。お疲れ様でした！" }
 ];
 
+// ブロックの定義
+const blocks = [
+  { name: "1: 東京・神奈川", start: 0, end: 9 },
+  { name: "2: 箱根・静岡東部", start: 10, end: 15 },
+  { name: "3: 静岡中部", start: 16, end: 24 },
+  { name: "4: 静岡西部", start: 25, end: 33 },
+  { name: "5: 愛知", start: 34, end: 42 },
+  { name: "6: 三重・近江・京都", start: 43, end: 54 }
+];
+
+let currentStations = []; // 今回学習/クイズの対象となる宿場サブセット
 let currentIndex = 0;
 let isAnimating = false;
+let currentMode = "all"; // "all" or "block"
 
-// DOM要素の取得
+// DOM要素
+const screens = ["home-screen", "study-screen", "quiz-screen", "clear-screen"];
 const currentNameEl = document.getElementById("current-name");
 const choicesContainer = document.getElementById("choices-container");
 const progressFill = document.getElementById("progress-fill");
 const progressText = document.getElementById("progress-text");
 const feedbackOverlay = document.getElementById("feedback-overlay");
 const feedbackMessage = document.getElementById("feedback-message");
-const quizScreen = document.getElementById("quiz-screen");
-const clearScreen = document.getElementById("clear-screen");
-const restartBtn = document.getElementById("restart-btn");
+const studyListEl = document.getElementById("study-list");
+const studyTitleEl = document.getElementById("study-title");
+const startQuizBtn = document.getElementById("start-quiz-btn");
+const mapPin = document.getElementById("map-pin");
+const pinLabel = document.getElementById("pin-label");
 
-// アプリケーションの初期化
-function init() {
-  currentIndex = 0;
-  quizScreen.classList.add("active");
-  quizScreen.classList.remove("hidden");
-  clearScreen.classList.add("hidden");
-  clearScreen.classList.remove("active");
-  
-  loadQuestion();
+// 画面切り替えユーティリティ
+function showScreen(screenId) {
+  screens.forEach(id => {
+    const el = document.getElementById(id);
+    if (id === screenId) {
+      el.classList.remove("hidden");
+      el.classList.add("active");
+    } else {
+      el.classList.add("hidden");
+      el.classList.remove("active");
+    }
+  });
 }
 
-// 質問データの読み込みと表示
+// モード選択（Homeから呼ばれる）
+function selectMode(type, blockIdx = null) {
+  currentMode = type;
+  
+  if (type === "all") {
+    currentStations = [...stations];
+    startStudyPhase("全問踏破コース");
+  } else {
+    const block = blocks[blockIdx];
+    currentStations = stations.slice(block.start, block.end + 1);
+    startStudyPhase(block.name);
+  }
+}
+
+// 学習フェーズの開始
+function startStudyPhase(title) {
+  studyTitleEl.textContent = title;
+  studyListEl.innerHTML = "";
+  
+  // 今日の学習内容をリスト化
+  currentStations.forEach(s => {
+    const div = document.createElement("div");
+    div.className = "study-item";
+    div.innerHTML = `<span class="name">${s.name}</span><p class="desc">${s.hintText}</p>`;
+    studyListEl.appendChild(div);
+  });
+  
+  showScreen("study-screen");
+}
+
+// クイズ開始
+startQuizBtn.onclick = () => {
+  currentIndex = 0;
+  showScreen("quiz-screen");
+  loadQuestion();
+};
+
+// 質問データの読み込み
 function loadQuestion() {
-  // すべてクリアした場合
-  if (currentIndex >= stations.length - 1) {
+  if (currentIndex >= currentStations.length - 1) {
     showClearScreen();
     return;
   }
 
   isAnimating = false;
   
-  // UIの更新
-  currentNameEl.textContent = stations[currentIndex].name;
+  // UI更新
+  const s = currentStations[currentIndex];
+  currentNameEl.textContent = s.name;
   
-  // 名物テキストの更新
-  let meibutsuEl = document.getElementById("current-meibutsu");
-  if (meibutsuEl) {
-    meibutsuEl.textContent = stations[currentIndex].meibutsu;
-  }
+  const meibutsuEl = document.getElementById("current-meibutsu");
+  if (meibutsuEl) meibutsuEl.textContent = s.meibutsu;
 
-  // ご当地面白ヒントの更新
-  let hintTextEl = document.getElementById("current-hint-text");
-  if (hintTextEl) {
-    hintTextEl.textContent = stations[currentIndex].hintText;
-  }
+  const hintTextEl = document.getElementById("current-hint-text");
+  if (hintTextEl) hintTextEl.textContent = s.hintText;
 
-  // ルートマップ上のピンの位置更新
-  const mapPin = document.getElementById("map-pin");
-  const pinLabel = document.getElementById("pin-label");
-  if (mapPin && pinLabel) {
-    // 進行度合いをパーセントで計算（最小5% ～ 最大95%の範囲）
-    const progressRatio = currentIndex / (stations.length - 1);
-    const minLeft = 5;
-    const maxLeft = 95;
-    const currentLeft = minLeft + (progressRatio * (maxLeft - minLeft));
-    
-    mapPin.style.left = `${currentLeft}%`;
-    pinLabel.textContent = stations[currentIndex].name;
-  }
-
+  // ルートマップのピン更新
+  updateMapPin(s);
   updateProgress();
 
-  // 選択肢の生成
-  const correctAnswer = stations[currentIndex + 1].name;
+  // 選択肢
+  const correctAnswer = currentStations[currentIndex + 1].name;
   const dummyAnswers = generateDummyAnswers(correctAnswer);
-  
-  // 選択肢をシャッフル
   const allChoices = [correctAnswer, ...dummyAnswers];
   shuffleArray(allChoices);
 
-  // ボタンの描画
   choicesContainer.innerHTML = "";
   allChoices.forEach(choice => {
     const btn = document.createElement("button");
     btn.className = "choice-btn";
     btn.textContent = choice;
-    btn.addEventListener("click", () => handleChoice(choice, correctAnswer, btn));
+    btn.onclick = () => handleChoice(choice, correctAnswer);
     choicesContainer.appendChild(btn);
   });
 }
 
-// ダミーの選択肢（不正解）を2つ生成する（完全ランダム）
+// マップピンの更新
+function updateMapPin(station) {
+  // 元のstations配列でのインデックスを探して全行程での位置を出す
+  const globalIndex = stations.findIndex(s => s.name === station.name);
+  const progressRatio = globalIndex / (stations.length - 1);
+  const currentLeft = 5 + (progressRatio * 90);
+  
+  mapPin.style.left = `${currentLeft}%`;
+  pinLabel.textContent = station.name;
+}
+
 function generateDummyAnswers(correctAnswer) {
   const dummies = [];
   while (dummies.length < 2) {
     const randomIndex = Math.floor(Math.random() * stations.length);
     const candidate = stations[randomIndex].name;
-    
-    // 正解と同じでない、かつ、既に選ばれたダミーでもないものを選ぶ
     if (candidate !== correctAnswer && !dummies.includes(candidate)) {
       dummies.push(candidate);
     }
@@ -156,7 +198,6 @@ function generateDummyAnswers(correctAnswer) {
   return dummies;
 }
 
-// 配列のシャッフル関数 (Fisher-Yates)
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -164,78 +205,48 @@ function shuffleArray(array) {
   }
 }
 
-// 選択肢がクリックされた時の処理
-function handleChoice(selectedChoice, correctAnswer, buttonEl) {
+function handleChoice(selectedChoice, correctAnswer) {
   if (isAnimating) return;
   isAnimating = true;
 
   const isCorrect = selectedChoice === correctAnswer;
 
-  // ボタンにクラス付与（色変え）
-  const allButtons = document.querySelectorAll(".choice-btn");
-  allButtons.forEach(btn => {
-    if (btn.textContent === correctAnswer) {
-      btn.classList.add("correct");
-    } else {
-      btn.classList.add("wrong");
-    }
-  });
+  // フィードバック表示
+  feedbackOverlay.className = isCorrect ? "feedback-correct" : "feedback-wrong";
+  feedbackMessage.textContent = isCorrect ? "正解！次へ進みます。" : `残念... 次は「${correctAnswer}」です。`;
+  feedbackOverlay.classList.remove("hidden");
 
-  // フィードバックの表示
-  showFeedback(isCorrect, correctAnswer);
-
-  // 少し待ってから次へ
   setTimeout(() => {
-    hideFeedback();
+    feedbackOverlay.classList.add("hidden");
     if (isCorrect) {
       currentIndex++;
       loadQuestion();
     } else {
-      // 不正解の場合は同じ問題にとどまる
       isAnimating = false;
-      // ボタンの状態を元に戻す
-      allButtons.forEach(btn => {
-        btn.classList.remove("correct", "wrong");
-      });
     }
-  }, 1500); // 1.5秒待機
+  }, 1500);
 }
 
-// 正解・不正解表示
-function showFeedback(isCorrect, correctAnswer) {
-  feedbackOverlay.className = isCorrect ? "feedback-correct" : "feedback-wrong";
+function updateProgress() {
+  const progressPercent = (currentIndex / (currentStations.length - 1)) * 100;
+  progressFill.style.width = `${progressPercent}%`;
+  progressText.textContent = `${currentIndex + 1} / ${currentStations.length}`;
+}
+
+function showClearScreen() {
+  const clearTitle = document.getElementById("clear-title");
+  const clearMsg = document.getElementById("clear-message");
   
-  if (isCorrect) {
-    feedbackMessage.textContent = "正解！次へ進みます。";
+  if (currentMode === "all") {
+    clearTitle.textContent = "東海道 踏破達成！";
+    clearMsg.textContent = "江戸から京都までの全宿場を完全制覇しました。おめでとうございます！";
   } else {
-    feedbackMessage.textContent = `残念... 次の宿場は「${correctAnswer}」です。`;
+    clearTitle.textContent = "コース完了！";
+    clearMsg.textContent = "このブロックの宿場をマスターしました。この調子で次のブロックへ進みましょう。";
   }
   
-  feedbackOverlay.classList.remove("hidden");
+  showScreen("clear-screen");
 }
 
-function hideFeedback() {
-  feedbackOverlay.classList.add("hidden");
-}
-
-// プログレスバーの更新
-function updateProgress() {
-  const progressPercent = (currentIndex / (stations.length - 1)) * 100;
-  progressFill.style.width = `${progressPercent}%`;
-  // 日本橋が1、品川が2...なので、currentIndex + 1 を表示
-  progressText.textContent = `${currentIndex + 1} / ${stations.length}`;
-}
-
-// クリア画面の表示
-function showClearScreen() {
-  quizScreen.classList.remove("active");
-  quizScreen.classList.add("hidden");
-  clearScreen.classList.remove("hidden");
-  clearScreen.classList.add("active");
-}
-
-// イベントリスナー
-restartBtn.addEventListener("click", init);
-
-// アプリ開始
-window.onload = init;
+// 初回起動
+window.onload = () => showScreen("home-screen");

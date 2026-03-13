@@ -14,16 +14,56 @@
 <body>
   <div id="app-container">
     
-    <!-- クイズ画面 -->
-    <div id="quiz-screen" class="screen active">
+    <!-- ホーム画面（モード選択） -->
+    <div id="home-screen" class="screen active">
+      <div class="home-content">
+        <div class="app-title-area">
+          <span class="sub-title">江戸から京都へ</span>
+          <h1>東海道<br>五十三次クイズ</h1>
+        </div>
+        
+        <div class="mode-selection">
+          <button class="btn primary full-width" onclick="selectMode('all')">全問踏破に挑戦</button>
+          
+          <div class="block-grid">
+            <button class="btn secondary" onclick="selectMode('block', 0)">1: 東京・神奈川</button>
+            <button class="btn secondary" onclick="selectMode('block', 1)">2: 箱根・静岡東</button>
+            <button class="btn secondary" onclick="selectMode('block', 2)">3: 静岡中部</button>
+            <button class="btn secondary" onclick="selectMode('block', 3)">4: 静岡西部</button>
+            <button class="btn secondary" onclick="selectMode('block', 4)">5: 愛知</button>
+            <button class="btn secondary" onclick="selectMode('block', 5)">6: 三重・近江</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 学習画面（ヒント一覧） -->
+    <div id="study-screen" class="screen hidden">
       <header>
+        <button class="back-btn" onclick="showScreen('home-screen')">← 戻る</button>
+        <h2 id="study-title">学習コース</h2>
+      </header>
+      <main>
+        <div id="study-list" class="study-list">
+          <!-- ここにJavaScriptでリストが動的に生成されます -->
+        </div>
+      </main>
+      <footer>
+        <button id="start-quiz-btn" class="btn primary full-width">準備完了！クイズ開始</button>
+      </footer>
+    </div>
+    
+    <!-- クイズ画面 -->
+    <div id="quiz-screen" class="screen hidden">
+      <header>
+        <button class="back-btn" onclick="showScreen('home-screen')">🏠 ホーム</button>
         <div class="progress-bar">
           <div id="progress-fill"></div>
         </div>
         <div id="progress-text">1 / 54</div>
       </header>
 
-      <!-- 新設：CSSで描くルート線と現在地ピンの表示エリア -->
+      <!-- CSSで描くルート線と現在地ピンの表示エリア -->
       <div id="route-map-container">
         <div class="route-line"></div>
         <!-- 主要なランドマーク（目安） -->
@@ -42,7 +82,6 @@
         <div class="current-station">
           <span class="label">現在の宿場</span>
           <h1 id="current-name">日本橋</h1>
-          <!-- 名物テキストのみ表示 -->
           <p id="current-meibutsu" class="station-meibutsu"></p>
         </div>
         
@@ -70,10 +109,10 @@
     <!-- クリア画面 -->
     <div id="clear-screen" class="screen hidden">
       <div class="clear-content">
-        <h1>踏破達成！</h1>
-        <p>東海道五十三次（日本橋から三条大橋まで）を完全制覇しました。</p>
+        <h1 id="clear-title">踏破達成！</h1>
+        <p id="clear-message">東海道五十三次を完全制覇しました。</p>
         <div class="clear-stamp">GOAL</div>
-        <button id="restart-btn" class="btn primary">もう一度出発する</button>
+        <button class="btn primary" onclick="showScreen('home-screen')">ホームへ戻る</button>
       </div>
     </div>
 
