@@ -1,0 +1,310 @@
+/* 基本設定と変数定義（和風モダンカラー） */
+:root {
+  --color-primary: #b63e46; /* えんじ色 */
+  --color-secondary: #0f2350; /* 濃紺 */
+  --color-accent: #d4a13d; /* 金色/黄土色 */
+  --color-bg: #f9f6f0; /* 和紙のような白 */
+  --color-text: #333333;
+  --color-white: #ffffff;
+  
+  --font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --font-serif: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  /* スマホでのスクロールやハイライトを調整 */
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+#app-container {
+  width: 100vw;
+  height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg);
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 画面の切り替え */
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+.screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.98);
+  z-index: 0;
+}
+
+.screen.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+/* ヘッダーとプログレスバー */
+header {
+  padding: 15px 20px;
+  background-color: var(--color-white);
+  border-bottom: 2px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-right: 15px;
+  overflow: hidden;
+}
+
+#progress-fill {
+  height: 100%;
+  background-color: var(--color-accent);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+#progress-text {
+  font-weight: bold;
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  min-width: 50px;
+  text-align: right;
+}
+
+/* メインコンテンツ（クイズ画面） */
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.current-station {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(15, 35, 80, 0.2);
+}
+
+.current-station::before, .current-station::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background-color: rgba(255,255,255,0.2);
+}
+.current-station::before { left: 15px; }
+.current-station::after { right: 15px; }
+
+.label {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+#current-name {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: normal;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.question-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--color-secondary);
+}
+
+#choices-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ボタンデザイン */
+.choice-btn {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  border: 2px solid var(--color-secondary);
+  border-radius: 8px;
+  padding: 18px 20px;
+  font-size: 1.2rem;
+  font-family: var(--font-serif);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choice-btn:active {
+  transform: scale(0.98);
+  background-color: #f0f0f0;
+}
+
+.choice-btn.correct {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.choice-btn.wrong {
+  background-color: #888888;
+  border-color: #888888;
+  color: var(--color-white);
+  opacity: 0.8;
+}
+
+.btn.primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(182, 62, 70, 0.3);
+}
+
+/* フィードバックオーバレイ */
+#feedback-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: opacity 0.3s;
+}
+
+#feedback-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#feedback-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.feedback-correct #feedback-icon {
+  border: 5px solid var(--color-primary);
+  color: var(--color-primary);
+}
+.feedback-correct #feedback-icon::after {
+  content: "〇";
+}
+
+.feedback-wrong #feedback-icon {
+  border: 5px solid var(--color-secondary);
+  color: var(--color-secondary);
+}
+.feedback-wrong #feedback-icon::after {
+  content: "×";
+  font-size: 70px;
+}
+
+#feedback-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text);
+  text-align: center;
+  padding: 0 20px;
+  font-family: var(--font-serif);
+}
+
+/* クリア画面 */
+#clear-screen {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.clear-content h1 {
+  color: var(--color-accent);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: var(--font-serif);
+}
+
+.clear-stamp {
+  width: 150px;
+  height: 150px;
+  border: 5px double var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 40px auto;
+  transform: rotate(-15deg);
+}

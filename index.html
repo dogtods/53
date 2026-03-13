@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>東海道五十三次クイズ</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#b63e46">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app-container">
+    
+    <!-- クイズ画面 -->
+    <div id="quiz-screen" class="screen active">
+      <header>
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="progress-text">1 / 54</div>
+      </header>
+
+      <main>
+        <div class="current-station">
+          <span class="label">現在の宿場</span>
+          <h1 id="current-name">日本橋</h1>
+        </div>
+        
+        <div class="question-area">
+          <p class="question-text">次の宿場はどこ？</p>
+          <div id="choices-container">
+            <!-- 選択肢がJavaScriptで挿入されます -->
+          </div>
+        </div>
+      </main>
+
+      <!-- 正誤フィードバックオーバレイ -->
+      <div id="feedback-overlay" class="hidden">
+        <div id="feedback-icon"></div>
+        <p id="feedback-message"></p>
+      </div>
+    </div>
+
+    <!-- クリア画面 -->
+    <div id="clear-screen" class="screen hidden">
+      <div class="clear-content">
+        <h1>踏破達成！</h1>
+        <p>東海道五十三次（日本橋から三条大橋まで）を完全制覇しました。</p>
+        <div class="clear-stamp">GOAL</div>
+        <button id="restart-btn" class="btn primary">もう一度出発する</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => console.log('ServiceWorker registered'))
+          .catch(error => console.log('ServiceWorker error:', error));
+      });
+    }
+  </script>
+</body>
+</html>
